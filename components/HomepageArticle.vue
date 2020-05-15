@@ -3,14 +3,14 @@
     <div class="home-article__container">
       <!-- <button @click="loadedState = !loadedState">Click</button> -->
       <div class="home-article__image">
-        <div class="image" v-lazy:background-image="imageItem"></div>
+        <div v-lazy:background-image="imageItem" class="image" />
       </div>
       <div class="home-article__content">
         <div class="home-article__content--inner">
-          <span class="h5">{{contentType}}</span>
+          <span class="h5">{{ article.category }}</span>
           <h1 class="home-article__title">
             <a href="#">
-              Title
+              {{ article.title }}
             </a>
           </h1>
           <span class="home-article__date">September 2020</span>
@@ -29,6 +29,11 @@ import MoreArticles from '@/components/MoreArticles'
 export default {
   components: {
     MoreArticles
+  },
+  computed: {
+    article () {
+      return this.$store.state.articles.articles[0]
+    }
   }
 }
 </script>
