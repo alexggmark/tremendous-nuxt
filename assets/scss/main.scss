@@ -1,0 +1,115 @@
+$width-lg: 1100px;
+$width-md: 860px;
+$width-sm: 567px;
+
+$font-black: 'Font-Black';
+$font-bold: 'Font-Bold';
+$font-medium: -apple-system,system-ui,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+$font-thin: 'Font-Thin';
+
+$font-size-logo: 45px;
+$font-size-2xl: 54px;
+$font-size-xl: 43px;
+$font-size-lg: 25px;
+$font-size-md: 18px;
+$font-size-sm: 15px;
+$font-size-xs: 12px;
+$font-size-2xs: 10px;
+
+$line-height-2xl: 70px;
+$line-height-xl: 49px;
+$line-height-lg: 36px;
+$line-height-md: 30px;
+$line-height-sm: 26px;
+
+$spacing-xl: 62px;
+$spacing-lg: 2rem;
+$spacing-md: 1.5rem;
+$spacing-sm: 1rem;
+$spacing-xs: 0.65rem;
+$spacing-2xs: 0.4rem;
+$spacing-3xs: 0.2rem;
+
+$layout-lg: 115px;
+$layout-md: 60px;
+$layout-sm: 30px;
+
+$layout-margin: 10px;
+
+$color-black: #3d3d3d;
+$color-white: #ffffff;
+$color-grey: #454545;
+$color-grey-light: #f1f9fb;
+$color-primary: #0059ff;
+$color-secondary: #ff4b3e;
+$color-tertiary: #ffde00;
+
+$color-skeleton-light: #f3f3f3;
+$color-skeleton-dark: #eaeaea;
+
+@import 'fonts';
+@import 'skeleton';
+
+html, body {
+  background-color: $color-white;
+  color: $color-grey;
+  margin: 0;
+  padding: 0;
+  font-family: $font-medium;
+  font-weight: 100;
+}
+
+b {
+  font-weight: 500;
+}
+
+p {
+  margin-bottom: 2rem;
+}
+
+.visually-hidden {
+  height: 0;
+  visibility: hidden;
+}
+
+.h1 {
+  font-family: $font-medium;
+  font-size: 43px;
+  line-height: 60px;
+  margin: $spacing-md 0 $spacing-md;
+}
+
+.h2 {
+  font-family: $font-medium;
+  font-size: $font-size-md;
+  line-height: 30px;
+}
+
+.h3 {
+  font-family: $font-medium;
+}
+
+.h5 {
+  color: $color-grey;
+  font-family: $font-medium;
+  font-size: $font-size-xs;
+}
+
+.shadow {
+  box-shadow: 0px 8px 10px rgba(0,0,0,0.04);
+}
+
+@mixin container-shadow {
+  &::before {
+    content: '';
+    display: block;
+    width: calc(100% + 20px);
+    height: 100%;
+    background-color: #ffffff;
+    position: absolute;
+    top: 0;
+    left: -10px;
+    box-shadow: 0px 7px 40px 0 rgba(0,0,0,0.1);
+    z-index: -1;
+  }
+}

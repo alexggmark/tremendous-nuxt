@@ -12,11 +12,10 @@ import ArticleGrid from '@/components/ArticleGrid'
 import MainArticle from '@/components/MainArticle'
 
 export default {
-  layout: 'Standard',
   components: {
     HomepageArticle,
     ArticleGrid,
-    MainArticle
+    MainArticle,
   }
 }
 </script>
