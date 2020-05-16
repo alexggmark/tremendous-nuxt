@@ -1,7 +1,7 @@
 <template>
   <header>
-    <div class="header" ref="header">
-      <div class="header__mobile-menu" ref="mobilemenu" @click="toggleMobileMenu">
+    <div ref="header" class="header">
+      <div ref="mobilemenu" class="header__mobile-menu" @click="toggleMobileMenu">
         <div class="header__mobile-menu--close">
           <mobile-close />
         </div>
@@ -15,7 +15,9 @@
           <div class="header__mobile" @click="toggleMobileMenu">
             <mobile-menu />
           </div>
-          <logo-animation :animation="readyState" />
+          <!-- <client-only> -->
+          <logo-animation />
+          <!-- </client-only> -->
         </div>
       </div>
     </div>
@@ -39,7 +41,6 @@ export default {
   },
   data () {
     return {
-      readyState: false,
       navigation: [
         {
           title: 'Home',
@@ -71,11 +72,6 @@ export default {
     if (process.client) {
       window.removeEventListener('scroll', this.debounceHandleScroll)
     }
-  },
-  mounted () {
-    this.$nextTick(() => {
-      this.readyState = true
-    })
   },
   methods: {
     handleScroll () {

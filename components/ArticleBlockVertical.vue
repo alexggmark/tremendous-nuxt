@@ -1,7 +1,7 @@
 <template>
   <div class="article-vertical">
-    <div class="article-vertical__item" v-for="(article, index) in data" :key="index">
-      <router-link :to="{name: 'Article', params: {handle: article.entryId}}">
+    <div v-for="(article, index) in data" :key="index" class="article-vertical__item">
+      <a href="#">
         <div class="article-vertical__item--inner">
           <h2 class="h2">
             <a href="#">
@@ -12,7 +12,7 @@
             {{ article.date }}
           </span>
         </div>
-      </router-link>
+      </a>
     </div>
   </div>
 </template>

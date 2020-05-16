@@ -24,104 +24,94 @@
 </template>
 
 <script>
-import anime from 'animejs/lib/anime.es.js';
-import 'splitting/dist/splitting.css';
-import 'splitting/dist/splitting-cells.css';
-// import splitting from 'splitting';
-
-if (process.client) {
-  require('splitting')
-}
+import anime from 'animejs/lib/anime.es.js'
+import 'splitting/dist/splitting.css'
+import 'splitting/dist/splitting-cells.css'
 
 export default {
-  data() {
+  data () {
     return {
       el1: '.obj1',
       el1_2: '.obj1-2',
       el2: '.obj2',
       el3: '.obj3',
       el4: '.obj4',
-      el5: '.char',
+      el5: '.char'
     }
   },
-  props: ['animation'],
+  mounted () {
+    this.$splitting({
+      target: '[data-splitting]',
+      by: 'chars',
+      key: null
+    })
+
+    this.setAnimation()
+    this.runAnimation()
+  },
   methods: {
-    setAnimation() {
+    setAnimation () {
       anime.set(this.el1, {
-        scale: 0,
-      });
+        scale: 0
+      })
       anime.set(this.el1_2, {
-        scale: 0,
-      });
+        scale: 0
+      })
       anime.set(this.el2, {
-        width: 0,
-      });
+        width: 0
+      })
       anime.set(this.el3, {
         translateX: -30,
-        scale: 0,
-      });
+        scale: 0
+      })
       anime.set(this.el4, {
-        scale: 0,
-      });
+        scale: 0
+      })
       anime.set(this.el5, {
-        translateY: 50,
+        translateY: 50
       })
     },
-    runAnimation() {
+    runAnimation () {
       const logo = anime.timeline({
         easing: 'easeOutExpo',
         duration: 950,
-        loop: false,
-      });
+        loop: false
+      })
 
       logo
         .add({
           targets: this.el3,
           scale: 1,
-          delay: 1000,
+          delay: 1000
         })
         .add({
           targets: this.el1,
-          scale: 1,
+          scale: 1
         }, '-=750')
         .add({
           targets: this.el1_2,
-          scale: 0.8,
+          scale: 0.8
         }, '-=920')
         .add({
           targets: this.el3,
-          translateX: 0,
+          translateX: 0
         }, '-=500')
         .add({
           targets: this.el2,
-          width: 30,
+          width: 30
         }, '-=950')
         .add({
           targets: this.el4,
-          scale: 1,
+          scale: 1
         }, '-=400')
         .add({
           targets: this.el5,
           translateY: 0,
           duration: 750,
-          delay: anime.stagger(50),
+          delay: anime.stagger(50)
         }, '-=700')
     }
-  },
-  watch: {
-    animation() {
-      if (!this.animation) { return; }
-      this.runAnimation();
-    }
-  },
-  mounted() {
-    // splitting({
-    //   target: "[data-splitting]",
-    //   by: "chars",
-    //   key: null
-    // })
-    this.setAnimation();
-  },
+  }
 }
 </script>
 

@@ -1,6 +1,6 @@
-export const state = {
+export const state = () => ({
   articles: []
-}
+})
 
 export const mutations = {
   set (state, apiData) {
