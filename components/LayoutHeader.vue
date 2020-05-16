@@ -23,21 +23,27 @@
 </template>
 
 <script>
+import debounce from 'lodash/debounce'
+import scrollLock from 'scroll-lock'
 import NavigationComponent from '@/components/Navigation'
 import LogoAnimation from '@/components/animations/Logo'
 import MobileMenu from '@/components/animations/MobileMenu'
 import MobileClose from '@/components/animations/MobileClose'
-import debounce from 'lodash/debounce';
-import scrollLock from 'scroll-lock';
 
 export default {
-  data() {
+  components: {
+    NavigationComponent,
+    LogoAnimation,
+    MobileMenu,
+    MobileClose
+  },
+  data () {
     return {
       readyState: false,
       navigation: [
         {
           title: 'Home',
-          name: 'Home',
+          name: 'Home'
         },
         {
           title: 'About me',
@@ -46,57 +52,51 @@ export default {
         },
         {
           title: 'Articles',
-          type: 'Experiment1',
+          type: 'Experiment1'
         },
         {
           title: 'Portfolio',
-          type: 'Experiment2',
-        },
+          type: 'Experiment2'
+        }
       ]
     }
   },
-  components: {
-    NavigationComponent,
-    LogoAnimation,
-    MobileMenu,
-    MobileClose,
-  },
-  methods: {
-    handleScroll() {
-      if (window.scrollY > 0) {
-        this.$refs.header.classList.add('scrolled');
-        return;
-      }
-      this.$refs.header.classList.remove('scrolled');
-    },
-    toggleMobileMenu() {
-      if (this.$refs.mobilemenu.classList.contains('show')) {
-        this.$refs.mobilemenu.classList.remove('show');
-        scrollLock.enablePageScroll();
-
-        return;
-      }
-
-      scrollLock.disablePageScroll();
-      this.$refs.mobilemenu.classList.add('show');
-    }
-  },
-  mounted() {
-    this.$nextTick(() => {
-      this.readyState = true;
-    })
-  },
   created () {
-    this.debounceHandleScroll = debounce(this.handleScroll);
+    this.debounceHandleScroll = debounce(this.handleScroll)
     if (process.client) {
-      window.addEventListener('scroll', this.debounceHandleScroll);
+      window.addEventListener('scroll', this.debounceHandleScroll)
     }
   },
   destroyed () {
     if (process.client) {
-      window.removeEventListener('scroll', this.debounceHandleScroll);
+      window.removeEventListener('scroll', this.debounceHandleScroll)
     }
   },
+  mounted () {
+    this.$nextTick(() => {
+      this.readyState = true
+    })
+  },
+  methods: {
+    handleScroll () {
+      if (window.scrollY > 0) {
+        this.$refs.header.classList.add('scrolled')
+        return
+      }
+      this.$refs.header.classList.remove('scrolled')
+    },
+    toggleMobileMenu () {
+      if (this.$refs.mobilemenu.classList.contains('show')) {
+        this.$refs.mobilemenu.classList.remove('show')
+        scrollLock.enablePageScroll()
+
+        return
+      }
+
+      scrollLock.disablePageScroll()
+      this.$refs.mobilemenu.classList.add('show')
+    }
+  }
 }
 </script>
 

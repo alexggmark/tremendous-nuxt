@@ -3,7 +3,7 @@
     <div class="home-article__container">
       <!-- <button @click="loadedState = !loadedState">Click</button> -->
       <div class="home-article__image">
-        <div v-lazy:background-image="imageItem" class="image" />
+        <div :style="{ background: 'url(' + article.image.url + ')' }" class="image"></div>
       </div>
       <div class="home-article__content">
         <div class="home-article__content--inner">

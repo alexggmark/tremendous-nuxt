@@ -1,22 +1,41 @@
 <template>
-    <ul class="article-tag">
-      <li
-        v-for="tag in tagData"
-        :key="'article-tag-' + tag.fields.title"
-        :style="{
-          '--color-hover': getTagColor(tag.fields.title).color,
-          '--color-text-hover': getTagColor(tag.fields.title).darkText ? dark : light,
-        }"
-        class="article-tag__tag"
-      >
-        {{ tag.fields.title }}
-      </li>
-    </ul>
+  <ul class="article-tag">
+    <li
+      v-for="tag in linkedTagCat"
+      :key="'article-tag-' + tag.title"
+      :style="{
+        '--color-hover': tag.backgroundcolor.hex,
+        '--color-text-hover': tag.inverttext ? '#000000' : '#ffffff',
+      }"
+      class="article-tag__tag"
+    >
+      {{ tag.title }}<br>
+    </li>
+  </ul>
 </template>
-
 <script>
 export default {
-
+  props: {
+    tagData: {
+      type: Array,
+      required: true
+    }
+  },
+  computed: {
+    categories () {
+      return this.$store.state.categories.categories
+    },
+    tags () {
+      return this.tagData.map((tag) => {
+        return tag.title.title
+      })
+    },
+    linkedTagCat () {
+      return this.categories.filter((cat) => {
+        return this.tags.includes(cat.title)
+      })
+    }
+  }
 }
 </script>
 

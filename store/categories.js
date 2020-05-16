@@ -1,10 +1,10 @@
 export const state = {
-  articles: []
+  categories: []
 }
 
 export const mutations = {
   set (state, apiData) {
-    state.articles = apiData.allArticles
+    state.categories = apiData.allCategories
   }
 }
 
@@ -13,20 +13,12 @@ export const actions = {
     const apiData = await this.$apiRequest({
       query: `
         query {
-          allArticles {
-            categories {
-              title {
-                title
-              }
-            }
+          allCategories {
             title
-            intro
-            body
-            image {
-              id
-              url
+            inverttext
+            backgroundcolor {
+              hex
             }
-            _createdAt
           }
         }
       `

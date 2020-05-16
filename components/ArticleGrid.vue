@@ -1,26 +1,35 @@
 <template>
   <div class="article-grid">
     <div class="article-grid__container">
-      <div class="article-grid__item" v-for="(article, index) in data" :key="index">
-        <router-link :to="{name: 'Article', params: {handle: article.entryId}}">
+      <div v-for="(article, index) in articles" :key="index" class="article-grid__item">
+        <a href="#">
           <div class="article-grid__item--inner shadow">
             <h2 class="h2">
               {{ article.title }}
             </h2>
             <span class="article-grid__date">
-              {{ article.date }}
+              {{ article._createdAt }}
             </span>
-            <article-tags :tag-data="article.contentCategory"/>
+            <article-tags :tag-data="article.categories" />
           </div>
-        </router-link>
+        </a>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-export default {
+import ArticleTags from '@/components/ArticleTags'
 
+export default {
+  components: {
+    ArticleTags
+  },
+  computed: {
+    articles () {
+      return this.$store.state.articles.articles
+    }
+  }
 }
 </script>
 

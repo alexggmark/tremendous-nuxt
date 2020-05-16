@@ -2,21 +2,20 @@
   <div class="main-article">
     <div class="main-article__container">
       <div class="main-article__main">
-        <div class="main-article__image image" v-lazy:background-image="contentImage"></div>
-        <article-tags :tag-data="contentCategory"/>
+        <div :style="{ background: 'url(' + article.image.url + ')' }" class="main-article__image image" />
+        <article-tags :tag-data="article.categories" />
         <div class="main-article__content">
-
           <h2 class="main-article__title">
-            Test
+            {{ article.title }}
           </h2>
 
           <span class="main-article__date">
-            Test
+            {{ article._createdAt }}
           </span>
 
           <span class="main-article__text-content">
             <p>
-            Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+              {{ article.body }}
             </p>
           </span>
         </div>
@@ -30,7 +29,12 @@ import ArticleTags from '@/components/ArticleTags'
 
 export default {
   components: {
-    ArticleTags,
+    ArticleTags
+  },
+  computed: {
+    article () {
+      return this.$store.state.articles.articles[0]
+    }
   }
 }
 </script>

@@ -1,8 +1,8 @@
 <template>
   <section>
-    <homepage-article/>
-    <article-grid/>
-    <main-article entry-id="5JGMqLLbXqtqIK4QmyHzn2"/>
+    <homepage-article />
+    <article-grid />
+    <main-article />
   </section>
 </template>
 
@@ -15,7 +15,7 @@ export default {
   components: {
     HomepageArticle,
     ArticleGrid,
-    MainArticle,
+    MainArticle
   }
 }
 </script>
