@@ -2,19 +2,19 @@
   <div class="logo">
     <div class="logo__shapes">
       <svg class="obj1" height="20" width="20">
-        <circle cx="10" cy="10" r="10" fill="#272727"></circle>
+        <circle cx="10" cy="10" r="10" fill="#272727" />
       </svg>
       <svg class="obj1-2" height="20" width="20">
-        <circle cx="10" cy="10" r="10" fill="#ffffff"></circle>
+        <circle cx="10" cy="10" r="10" fill="#ffffff" />
       </svg>
       <svg class="obj2" width="30" height="20">
-        <rect width="30" height="20" fill="#272727"></rect>
+        <rect width="30" height="20" fill="#272727" />
       </svg>
       <svg class="obj3" height="20" width="20">
-        <circle cx="10" cy="10" r="10" fill="#272727"></circle>
+        <circle cx="10" cy="10" r="10" fill="#272727" />
       </svg>
       <svg class="obj4" height="20" width="20">
-        <circle cx="10" cy="10" r="10" fill="#272727"></circle>
+        <circle cx="10" cy="10" r="10" fill="#272727" />
       </svg>
     </div>
     <span class="logo__text">

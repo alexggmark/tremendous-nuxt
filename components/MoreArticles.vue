@@ -1,14 +1,16 @@
 <template>
   <ul>
     <li v-for="(article, index) in articles" :key="index">
-      <a href="#">
+      <nuxt-link :to="'/articles/' + handleize(article.title)">
         {{ article.title }}
-      </a>
+      </nuxt-link>
     </li>
   </ul>
 </template>
 
 <script>
+import { handleize } from '@/modules/stringTools'
+
 export default {
   data () {
     return {
@@ -20,6 +22,9 @@ export default {
     articles () {
       return this.$store.state.articles.articles
     }
+  },
+  methods: {
+    handleize
   }
 }
 </script>

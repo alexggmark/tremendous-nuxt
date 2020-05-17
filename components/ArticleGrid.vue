@@ -2,7 +2,7 @@
   <div class="article-grid">
     <div class="article-grid__container">
       <div v-for="(article, index) in articles" :key="index" class="article-grid__item">
-        <a href="#">
+        <nuxt-link :to="'/articles/' + handleize(article.title)">
           <div class="article-grid__item--inner shadow">
             <h2 class="h2">
               {{ article.title }}
@@ -12,7 +12,7 @@
             </span>
             <article-tags :tag-data="article.categories" />
           </div>
-        </a>
+        </nuxt-link>
       </div>
     </div>
   </div>
@@ -20,6 +20,7 @@
 
 <script>
 import ArticleTags from '@/components/ArticleTags'
+import { handleize } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -29,6 +30,9 @@ export default {
     articles () {
       return this.$store.state.articles.articles
     }
+  },
+  methods: {
+    handleize
   }
 }
 </script>

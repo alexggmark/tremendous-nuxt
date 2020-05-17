@@ -14,6 +14,7 @@ export const actions = {
       query: `
         query {
           allArticles {
+            id
             categories {
               title {
                 title

@@ -2,20 +2,20 @@
   <div class="main-article">
     <div class="main-article__container">
       <div class="main-article__main">
-        <div :style="{ background: 'url(' + article.image.url + ')' }" class="main-article__image image" />
-        <article-tags :tag-data="article.categories" />
+        <div :style="{ background: 'url(' + entryData.image.url + ')' }" class="main-article__image image" />
+        <article-tags :tag-data="entryData.categories" />
         <div class="main-article__content">
           <h2 class="main-article__title">
-            {{ article.title }}
+            {{ entryData.title }}
           </h2>
 
           <span class="main-article__date">
-            {{ article._createdAt }}
+            {{ entryData._createdAt }}
           </span>
 
           <span class="main-article__text-content">
             <p>
-              {{ article.body }}
+              {{ entryData.body }}
             </p>
           </span>
         </div>
@@ -31,9 +31,10 @@ export default {
   components: {
     ArticleTags
   },
-  computed: {
-    article () {
-      return this.$store.state.articles.articles[0]
+  props: {
+    entryData: {
+      type: Object,
+      required: true
     }
   }
 }

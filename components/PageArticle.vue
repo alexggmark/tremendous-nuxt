@@ -1,6 +1,6 @@
 <template>
   <main>
-    <main-article :entry-id="entryId" :key="entryId" />
+    <main-article :key="entryHandle" :entry-handle="entryHandle" />
   </main>
 </template>
 
@@ -9,16 +9,11 @@ import MainArticle from '@/components/MainArticle'
 
 export default {
   components: {
-    MainArticle,
+    MainArticle
   },
-  data() {
+  data () {
     return {
-      entryId: this.$route.params.handle,
-    }
-  },
-  watch: {
-    $route(to) {
-      this.entryId = to.params.handle;
+      entryHandle: this.$route.params.handle
     }
   }
 }

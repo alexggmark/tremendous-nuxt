@@ -13,7 +13,7 @@
               {{ article.title }}
             </a>
           </h1>
-          <span class="home-article__date">September 2020</span>
+          <span class="home-article__date">{{ article._createdAt }}</span>
           <div class="home-article__more-articles">
             <more-articles />
           </div>
