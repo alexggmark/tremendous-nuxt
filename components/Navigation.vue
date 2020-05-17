@@ -1,9 +1,12 @@
 <template>
   <ul>
     <li v-for="(link, index) in navigationLinks" :key="index">
-      <a href="#">
+      <nuxt-link v-if="link.link" :to="'/' + link.link.navigationtitle">
         {{ link.title }}
-      </a>
+      </nuxt-link>
+      <nuxt-link v-else :to="'/' + link.stringlink">
+        {{ link.title }}
+      </nuxt-link>
     </li>
   </ul>
 </template>

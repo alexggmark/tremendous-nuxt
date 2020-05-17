@@ -1,17 +1,16 @@
 <template>
   <div class="home-article">
     <div class="home-article__container">
-      <!-- <button @click="loadedState = !loadedState">Click</button> -->
       <div class="home-article__image">
-        <div :style="{ background: 'url(' + article.image.url + ')' }" class="image"></div>
+        <div :style="{ background: 'url(' + article.image.url + ')' }" class="image" />
       </div>
       <div class="home-article__content">
         <div class="home-article__content--inner">
           <span class="h5">{{ article.category }}</span>
           <h1 class="home-article__title">
-            <a href="#">
+            <nuxt-link :to="'/articles/' + handleize(article.title)">
               {{ article.title }}
-            </a>
+            </nuxt-link>
           </h1>
           <span class="home-article__date">{{ article._createdAt }}</span>
           <div class="home-article__more-articles">
@@ -25,6 +24,7 @@
 
 <script>
 import MoreArticles from '@/components/MoreArticles'
+import { handleize } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -34,6 +34,9 @@ export default {
     article () {
       return this.$store.state.articles.articles[0]
     }
+  },
+  methods: {
+    handleize
   }
 }
 </script>

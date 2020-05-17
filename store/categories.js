@@ -14,6 +14,7 @@ export const actions = {
       query: `
         query {
           allCategories {
+            id
             title
             inverttext
             backgroundcolor {

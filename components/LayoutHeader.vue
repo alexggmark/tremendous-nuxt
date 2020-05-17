@@ -15,9 +15,7 @@
           <div class="header__mobile" @click="toggleMobileMenu">
             <mobile-menu />
           </div>
-          <!-- <client-only> -->
           <logo-animation />
-          <!-- </client-only> -->
         </div>
       </div>
     </div>
@@ -39,27 +37,9 @@ export default {
     MobileMenu,
     MobileClose
   },
-  data () {
-    return {
-      navigation: [
-        {
-          title: 'Home',
-          name: 'Home'
-        },
-        {
-          title: 'About me',
-          type: 'About',
-          id: '7bV3O9Tl8v48qvSwpuGDFw'
-        },
-        {
-          title: 'Articles',
-          type: 'Experiment1'
-        },
-        {
-          title: 'Portfolio',
-          type: 'Experiment2'
-        }
-      ]
+  computed: {
+    navigation () {
+      return this.$store.state.navigation.navigation
     }
   },
   created () {

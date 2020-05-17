@@ -18,6 +18,7 @@ export const actions = {
             categories {
               title {
                 title
+                id
               }
             }
             title

@@ -12,7 +12,7 @@ export const actions = {
   async fetchAndSet ({ commit }) {
     const apiData = await this.$apiRequest({
       query: `
-        query MyQuery {
+        query {
           allPages {
             title
             subtitle
