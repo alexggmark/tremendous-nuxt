@@ -10,7 +10,7 @@
           </h2>
 
           <span class="main-article__date">
-            {{ entryData._createdAt }}
+            {{ processDate(entryData._createdAt) }}
           </span>
 
           <span class="main-article__text-content" v-html="markdown(entryData.body)" />
@@ -22,7 +22,7 @@
 
 <script>
 import ArticleTags from '@/components/ArticleTags'
-import { markdown } from '@/modules/stringTools'
+import { markdown, processDate } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -35,7 +35,8 @@ export default {
     }
   },
   methods: {
-    markdown
+    markdown,
+    processDate
   }
 }
 </script>

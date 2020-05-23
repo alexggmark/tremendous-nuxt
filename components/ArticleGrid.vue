@@ -8,7 +8,7 @@
               {{ article.title }}
             </h2>
             <span class="article-grid__date">
-              {{ article._createdAt }}
+              {{ processDate(article._createdAt) }}
             </span>
             <article-tags :tag-data="article.categories" />
           </div>
@@ -20,7 +20,7 @@
 
 <script>
 import ArticleTags from '@/components/ArticleTags'
-import { handleize } from '@/modules/stringTools'
+import { handleize, processDate } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -32,7 +32,8 @@ export default {
     }
   },
   methods: {
-    handleize
+    handleize,
+    processDate
   }
 }
 </script>

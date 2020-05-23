@@ -1,6 +1,6 @@
 <template>
   <section>
-    <div class="header-banner" :style="{ background: 'url(' + category.image.url + ')' }" />
+    <div class="header-banner" :style="{ background: 'url(' + category.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" />
     <article-page-block :article-data="matchedCatArticles" />
   </section>
 </template>

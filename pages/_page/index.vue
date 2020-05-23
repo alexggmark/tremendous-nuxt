@@ -3,13 +3,13 @@
     <div class="page--top">
       <div class="page__container">
         <div class="page__main">
-          <div class="page__image image" :style="{ background: 'url(' + pageData.image.url + ')' }" />
+          <div class="page__image image" :style="{ background: 'url(' + pageData.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" />
           <h2 class="page__title">
             {{ pageData.title }}
           </h2>
-          <span class="page__text-content">
+          <p class="page__text-content">
             {{ pageData.subtitle }}
-          </span>
+          </p>
         </div>
       </div>
     </div>
@@ -19,19 +19,19 @@
           <div
             v-for="(item, index) in pageData.content"
             :key="'block' + index"
-            :class="{ 'page__content--reverse': index % 2 == 0 }"
+            :class="{ 'page__content--reverse': index % 2 !== 0 }"
             class="page__content shadow"
           >
             <div class="page__block">
-              <div class="page__image image" :style="{ background: 'url(' + item.image.url + ')' }" />
+              <div class="page__image image" :style="{ background: 'url(' + item.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" />
             </div>
             <div class="page__block page__block--text">
               <h2 class="h3">
                 {{ item.title }}
               </h2>
-              <span class="page__text-content">
+              <p class="page__text-content">
                 {{ item.content }}
-              </span>
+              </p>
             </div>
           </div>
 

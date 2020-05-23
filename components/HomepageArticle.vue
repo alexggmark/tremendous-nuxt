@@ -13,7 +13,7 @@
               {{ article.title }}
             </nuxt-link>
           </h1>
-          <span class="home-article__date">{{ article._createdAt }}</span>
+          <span class="home-article__date">{{ processDate(article._createdAt) }}</span>
           <div class="home-article__more-articles">
             <more-articles />
           </div>
@@ -26,7 +26,7 @@
 <script>
 import MoreArticles from '@/components/MoreArticles'
 import ArticleTags from '@/components/ArticleTags'
-import { handleize } from '@/modules/stringTools'
+import { handleize, processDate } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -44,7 +44,8 @@ export default {
     }
   },
   methods: {
-    handleize
+    handleize,
+    processDate
   }
 }
 </script>

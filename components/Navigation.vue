@@ -4,7 +4,7 @@
       <nuxt-link v-if="link.link" :to="'/' + link.link.navigationtitle">
         {{ link.title }}
       </nuxt-link>
-      <nuxt-link v-else :to="'/' + link.stringlink">
+      <nuxt-link v-else :to="link.stringlink">
         {{ link.title }}
       </nuxt-link>
     </li>
