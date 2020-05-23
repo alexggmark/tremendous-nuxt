@@ -15,6 +15,7 @@
     "animejs": "^3.2.0",
     "dotenv": "^8.2.0",
     "graphql-request": "^1.8.2",
+    "markdown-it": "^11.0.0",
     "nuxt": "^2.0.0",
     "scroll-lock": "^2.1.4",
     "splitting": "^1.0.6"

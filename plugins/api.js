@@ -8,6 +8,7 @@ export default ({ app }, inject) => {
 
     const client = new GraphQLClient(endpoint, {
       headers: {
+        // authorization: `Bearer ${process.env.DATOCMS_TOKEN}`
         authorization: 'Bearer 6fc78660c7274f72a1197d25040ff2'
       }
     })

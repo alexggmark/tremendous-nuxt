@@ -13,11 +13,7 @@
             {{ entryData._createdAt }}
           </span>
 
-          <span class="main-article__text-content">
-            <p>
-              {{ entryData.body }}
-            </p>
-          </span>
+          <span class="main-article__text-content" v-html="markdown(entryData.body)" />
         </div>
       </div>
     </div>
@@ -26,6 +22,7 @@
 
 <script>
 import ArticleTags from '@/components/ArticleTags'
+import { markdown } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -36,6 +33,9 @@ export default {
       type: Object,
       required: true
     }
+  },
+  methods: {
+    markdown
   }
 }
 </script>
@@ -46,6 +46,31 @@ export default {
 .main-article {
   color: $color-black;
   padding-bottom: $spacing-xl;
+
+  blockquote {
+    // background-color: $color-grey-light;
+    color: $color-primary;
+    font-size: 25px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    position: relative;
+
+    &::before {
+      content: '';
+      display: block;
+      background-color: $color-primary;
+      width: 6px;
+      left: 0;
+      height: 100%;
+      position: absolute;
+    }
+
+    p {
+      margin: 0;
+      padding: 0 1rem 0 1.5rem;
+    }
+  }
 
   .contentful__code-block {
     background-color: #232323;
@@ -130,9 +155,22 @@ export default {
     &__content {
       padding: 0;
     }
+
+    blockquote {
+      &::before {
+        left: 1rem;
+      }
+
+      p {
+        margin: 0;
+        padding: 1rem 1rem 1rem 3rem;
+      }
+    }
   }
 
   @media screen and (min-width: $width-lg) {
+    padding-top: 2rem;
+
     .code-block {
       font-size: 16px;
       line-height: 23px;
