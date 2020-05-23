@@ -186,6 +186,8 @@ export default {
   }
 
   @media screen and (min-width: $width-lg) {
+    padding-top: 2rem;
+
     &__container {
       flex-flow: row;
       padding: 0;

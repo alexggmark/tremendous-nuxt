@@ -4,6 +4,7 @@ export const actions = {
       dispatch('navigation/fetchAndSet'),
       dispatch('articles/fetchAndSet'),
       dispatch('categories/fetchAndSet'),
+      dispatch('assets/fetchAndSet'),
       dispatch('pages/fetchAndSet')
     ])
   }

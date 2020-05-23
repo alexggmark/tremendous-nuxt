@@ -2,10 +2,11 @@
   <div class="home-article">
     <div class="home-article__container">
       <div class="home-article__image">
-        <div :style="{ background: 'url(' + article.image.url + ')' }" class="image" />
+        <div :style="{ background: 'url(' + assets.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" class="image" />
       </div>
       <div class="home-article__content">
         <div class="home-article__content--inner">
+          <article-tags :tag-data="article.categories" />
           <span class="h5">{{ article.category }}</span>
           <h1 class="home-article__title">
             <nuxt-link :to="'/articles/' + handleize(article.title)">
@@ -24,15 +25,22 @@
 
 <script>
 import MoreArticles from '@/components/MoreArticles'
+import ArticleTags from '@/components/ArticleTags'
 import { handleize } from '@/modules/stringTools'
 
 export default {
   components: {
-    MoreArticles
+    MoreArticles,
+    ArticleTags
   },
   computed: {
     article () {
       return this.$store.state.articles.articles[0]
+    },
+    assets () {
+      return this.$store.state.assets.assets.find((asset) => {
+        return asset.assettitle === 'homepagesplash'
+      })
     }
   },
   methods: {
@@ -46,6 +54,11 @@ export default {
 
 .home-article {
   padding-bottom: 2rem;
+
+  .article-tag {
+    margin: 0;
+    padding: 0;
+  }
 
   &__container {
     display: flex;
