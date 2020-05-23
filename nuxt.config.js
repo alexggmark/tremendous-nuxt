@@ -28,7 +28,8 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/api.js'
+    '@/plugins/api.js',
+    { src: '@/plugins/splitting.js', ssr: false }
   ],
   /*
   ** Nuxt.js dev-modules
