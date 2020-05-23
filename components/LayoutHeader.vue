@@ -218,7 +218,7 @@ export default {
   @media screen and (min-width: $width-lg) {
     display: flex;
     justify-content: center;
-    margin-bottom: 2rem;
+    // margin-bottom: 2rem;
     min-height: 140px;
     padding-bottom: $spacing-sm;
     width: 100%;

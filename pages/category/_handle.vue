@@ -1,5 +1,6 @@
 <template>
   <section>
+    <div class="header-banner" :style="{ background: 'url(' + category.image.url + ')' }" />
     <article-page-block :article-data="matchedCatArticles" />
   </section>
 </template>
@@ -19,15 +20,15 @@ export default {
     }
   },
   computed: {
-    categoryId () {
+    category () {
       return this.$store.state.categories.categories.find((cat) => {
         return handleize(cat.title) === this.handle
-      }).id
+      })
     },
     matchedCatArticles () {
       return this.$store.state.articles.articles.filter((article) => {
         return article.categories.some((item) => {
-          return item.title.id === this.categoryId
+          return item.title.id === this.category.id
         })
       })
     }
@@ -38,6 +39,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style lang="scss">
+.header-banner {
+  min-height: 300px;
+}
 </style>

@@ -9,11 +9,15 @@
       }"
       class="article-tag__tag"
     >
-      {{ tag.title }}<br>
+      <nuxt-link :to="'/category/' + handleize(tag.title)">
+        {{ tag.title }}
+      </nuxt-link>
     </li>
   </ul>
 </template>
 <script>
+import { handleize } from '@/modules/stringTools'
+
 export default {
   props: {
     tagData: {
@@ -35,6 +39,9 @@ export default {
         return this.tags.includes(cat.title)
       })
     }
+  },
+  methods: {
+    handleize
   }
 }
 </script>
@@ -58,6 +65,11 @@ export default {
     margin: 0.3rem 0.3rem 0 0;
     padding: 0.2rem 0.5rem;
     transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
   }
 
   @media screen and (min-width: $width-md) {

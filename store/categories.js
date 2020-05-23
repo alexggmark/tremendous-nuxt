@@ -17,6 +17,9 @@ export const actions = {
             id
             title
             inverttext
+            image {
+              url
+            }
             backgroundcolor {
               hex
             }
