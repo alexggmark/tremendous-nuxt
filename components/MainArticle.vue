@@ -49,6 +49,7 @@ export default {
   padding-bottom: $spacing-xl;
 
   img {
+    border: 2px solid $color-grey-light;
     width: 100%;
   }
 
