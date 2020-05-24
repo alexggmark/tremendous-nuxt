@@ -68,7 +68,6 @@ export default {
 
     &--inner {
       background-color: $color-white;
-      border-radius: 5px;
       box-sizing: content-box;
       cursor: pointer;
       display: flex;
@@ -93,7 +92,7 @@ export default {
       &:hover {
         background-color: #fbfeff;
         box-shadow: 0px 11px 10px rgba(0,0,0,0.08);
-        transform: translate(0, -4px);
+        transform: translate(0, -7px);
 
         h2 {
           color: $color-primary;

@@ -2,7 +2,7 @@
   <div class="main-article">
     <div class="main-article__container">
       <div class="main-article__main">
-        <div :style="{ background: 'url(' + entryData.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" class="main-article__image image" />
+        <div :style="{ background: 'url(' + entryData.image.url + ')', backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }" class="main-article__image image" />
         <article-tags :tag-data="entryData.categories" />
         <div class="main-article__content">
           <h2 class="main-article__title">
@@ -187,7 +187,7 @@ export default {
     }
 
     &__image {
-      height: 320px;
+      height: 500px;
     }
 
     .skeleton--image {

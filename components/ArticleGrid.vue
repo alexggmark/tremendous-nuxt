@@ -65,7 +65,6 @@ export default {
 
     &--inner {
       background-color: $color-white;
-      border-radius: 5px;
       box-sizing: content-box;
       cursor: pointer;
       display: flex;
@@ -77,7 +76,7 @@ export default {
       padding-left: $spacing-xs;
       padding-right: $spacing-sm;
       position: relative;
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      transition: transform 0.1s ease, box-shadow 0.1s ease;
 
       .article-tag {
         position: absolute;
@@ -88,9 +87,8 @@ export default {
       }
 
       &:hover {
-        background-color: #fbfeff;
         box-shadow: 0px 11px 10px rgba(0,0,0,0.08);
-        transform: translate(0, -4px);
+        transform: translate(0px, -7px);
 
         h2 {
           color: $color-primary;

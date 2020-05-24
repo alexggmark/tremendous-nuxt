@@ -20,7 +20,7 @@ export default {
   },
   computed: {
     articles () {
-      return this.$store.state.articles.articles
+      return this.$store.state.articles.articles.slice(1, 4)
     }
   },
   methods: {

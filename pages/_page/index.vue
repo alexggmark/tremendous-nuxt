@@ -83,8 +83,7 @@ export default {
   &__container {
     display: flex;
     margin: 0 auto;
-    padding: 0 1rem;
-    width: calc(100% - 2rem);
+    width: 100%;
   }
 
   &__content {

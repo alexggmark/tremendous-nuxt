@@ -36,7 +36,7 @@ $layout-sm: 30px;
 
 $layout-margin: 10px;
 
-$color-black: #3d3d3d;
+$color-black: #383838;
 $color-white: #ffffff;
 $color-grey: #454545;
 $color-grey-light: #f1f9fb;
@@ -96,7 +96,7 @@ p {
 }
 
 .shadow {
-  box-shadow: 0px 8px 10px rgba(0,0,0,0.04);
+  box-shadow: 0px 8px 10px rgba(0,0,0,0.02);
 }
 
 @mixin container-shadow {
