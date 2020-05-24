@@ -2,7 +2,7 @@
   <div class="home-article">
     <div class="home-article__container">
       <div class="home-article__image">
-        <div :style="{ background: 'url(' + assets.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" class="image" />
+        <div :style="{ background: 'url(' + assets.image.url + ')', backgroundPosition: 'center', backgroundSize: 'contain', backgroundRepeat: 'no-repeat' }" class="image" />
       </div>
       <div class="home-article__content">
         <div class="home-article__content--inner">

@@ -3,7 +3,7 @@
     <div class="page--top">
       <div class="page__container">
         <div class="page__main">
-          <div class="page__image image" :style="{ background: 'url(' + pageData.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover' }" />
+          <div class="page__image image" :style="{ background: 'url(' + pageData.image.url + ')', backgroundPosition: 'center', backgroundSize: 'cover', backgroundRepeat: 'no-repeat' }" />
           <h2 class="page__title">
             {{ pageData.title }}
           </h2>
@@ -120,7 +120,7 @@ export default {
   &__image {
     background-size: cover;
     background-position: center;
-    height: 420px;
+    height: 500px;
   }
 
   &__title {
