@@ -34,18 +34,6 @@
               </p>
             </div>
           </div>
-
-          <!-- <div class="page__content page__content--reverse shadow" v-if="content3Image && content3Text">
-            <div class="page__block">
-                <div class="page__image image" v-lazy:background-image="content3Image"></div>
-            </div>
-            <div class="page__block page__block--text">
-              <h2 class="h3">
-                {{content3Title}}
-              </h2>
-              <span class="page__text-content" v-html="content3Text"></span>
-            </div>
-          </div> -->
         </div>
       </div>
     </div>
@@ -74,6 +62,7 @@ export default {
 @import '@/assets/scss/main.scss';
 
 .page {
+  background-color: $color-white;
   color: $color-black;
 
   &--bottom {
@@ -83,7 +72,8 @@ export default {
   &__container {
     display: flex;
     margin: 0 auto;
-    width: 100%;
+    padding: 1rem;
+    width: calc(100% - 2rem);
   }
 
   &__content {

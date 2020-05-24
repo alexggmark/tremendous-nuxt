@@ -85,6 +85,7 @@ export default {
   -khtml-user-select: none; /* Konqueror HTML */
   -moz-user-select: none; /* Firefox */
   -ms-user-select: none; /* Internet Explorer/Edge */
+  background-color: $color-white;
   color: $color-black;
   min-height: 75px;
   transition: min-height 0.4s ease;

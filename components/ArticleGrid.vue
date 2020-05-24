@@ -107,10 +107,6 @@ export default {
     font-size: $font-size-xs;
   }
 
-  @media screen and (min-width: $width-sm) {
-    margin-bottom: 1rem;
-  }
-
   @media screen and (min-width: $width-lg) {
     overflow: hidden;
 

@@ -45,6 +45,7 @@ export default {
 @import '@/assets/scss/main.scss';
 
 .main-article {
+  background-color: $color-white;
   color: $color-black;
   padding-bottom: $spacing-xl;
 

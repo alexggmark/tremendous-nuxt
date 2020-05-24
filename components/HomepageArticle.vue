@@ -54,6 +54,7 @@ export default {
 @import '@/assets/scss/main.scss';
 
 .home-article {
+  background-color: $color-white;
   padding-bottom: 2rem;
 
   .article-tag {
