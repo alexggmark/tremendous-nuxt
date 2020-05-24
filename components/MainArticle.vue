@@ -182,10 +182,11 @@ export default {
     }
 
     &__main {
-      padding: 0 16rem 0 0;
+      width: 800px;
     }
 
     &__container {
+      display: block;
       flex-flow: row-reverse;
       width: $width-lg;
     }
