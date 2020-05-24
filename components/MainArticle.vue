@@ -48,6 +48,10 @@ export default {
   color: $color-black;
   padding-bottom: $spacing-xl;
 
+  img {
+    width: 100%;
+  }
+
   blockquote {
     // background-color: $color-grey-light;
     color: $color-primary;
