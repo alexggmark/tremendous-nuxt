@@ -16,6 +16,7 @@
     "dotenv": "^8.2.0",
     "graphql-request": "^1.8.2",
     "markdown-it": "^11.0.0",
+    "markdown-it-highlightjs": "^3.1.0",
     "nuxt": "^2.0.0",
     "scroll-lock": "^2.1.4",
     "splitting": "^1.0.6"
@@ -23,6 +24,7 @@
   "devDependencies": {
     "@nuxtjs/eslint-config": "^2.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
+    "@nuxtjs/markdownit": "^1.2.9",
     "@nuxtjs/stylelint-module": "^3.1.0",
     "babel-eslint": "^10.0.1",
     "eslint": "^6.1.0",

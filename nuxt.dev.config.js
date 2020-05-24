@@ -1,4 +1,6 @@
 import fs from 'fs'
+// import hljs from 'highlight.js'
+// import 'markdown-it-highlightjs'
 
 export default {
   mode: 'universal',
@@ -31,6 +33,8 @@ export default {
   ** Global CSS
   */
   css: [
+    // 2.) use a style for syntax highlighting
+    'highlight.js/styles/monokai-sublime.css'
   ],
   /*
   ** Plugins to load before mounting the App
@@ -48,7 +52,29 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/markdownit'
   ],
+  markdownit: {
+    injected: true,
+    preset: 'default',
+    linkify: true,
+    breaks: true,
+    use: [
+      'markdown-it-highlightjs'
+    ]
+    // extendMarkdown: (md) => {
+    //   // use more markdown-it plugins!
+    //   md.use(require('markdown-it-highlightjs'))
+    // }
+    // highlight (str, lang) {
+    //   if (lang && hljs.getLanguage(lang)) {
+    //     try {
+    //       return hljs.highlight(lang, str).value
+    //     } catch (__) {}
+    //     return '' // use external default escaping
+    //   }
+    // }
+  },
   /*
   ** Build configuration
   */

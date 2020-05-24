@@ -13,7 +13,7 @@
             {{ processDate(entryData._createdAt) }}
           </span>
 
-          <span class="main-article__text-content" v-html="markdown(entryData.body)" />
+          <span class="main-article__text-content" v-html="$md.render(entryData.body)" />
         </div>
       </div>
     </div>
@@ -22,7 +22,7 @@
 
 <script>
 import ArticleTags from '@/components/ArticleTags'
-import { markdown, processDate } from '@/modules/stringTools'
+import { processDate } from '@/modules/stringTools'
 
 export default {
   components: {
@@ -35,7 +35,6 @@ export default {
     }
   },
   methods: {
-    markdown,
     processDate
   }
 }
