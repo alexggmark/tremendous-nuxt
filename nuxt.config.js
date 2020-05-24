@@ -20,11 +20,16 @@ export default {
   */
   loading: { color: '#fff' },
   /*
+  ** Nuxt.js modules
+  */
+  modules: [
+    '@nuxtjs/markdownit'
+  ],
+  /*
   ** Global CSS
   */
   css: [
-    // 2.) use a style for syntax highlighting
-    'highlight.js/styles/monokai-sublime.css'
+    { src: 'highlight.js/styles/monokai-sublime.css', lang: 'css' }
   ],
   /*
   ** Plugins to load before mounting the App
@@ -42,12 +47,6 @@ export default {
     // Doc: https://github.com/nuxt-community/stylelint-module
     '@nuxtjs/stylelint-module'
   ],
-  /*
-  ** Nuxt.js modules
-  */
-  modules: [
-    '@nuxtjs/markdownit'
-  ],
   markdownit: {
     injected: true,
     preset: 'default',
@@ -56,18 +55,6 @@ export default {
     use: [
       'markdown-it-highlightjs'
     ]
-    // extendMarkdown: (md) => {
-    //   // use more markdown-it plugins!
-    //   md.use(require('markdown-it-highlightjs'))
-    // }
-    // highlight (str, lang) {
-    //   if (lang && hljs.getLanguage(lang)) {
-    //     try {
-    //       return hljs.highlight(lang, str).value
-    //     } catch (__) {}
-    //     return '' // use external default escaping
-    //   }
-    // }
   },
   /*
   ** Build configuration
