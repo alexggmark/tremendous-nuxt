@@ -14,7 +14,7 @@
           </span>
 
           <div
-            v-if="entryData.buttonlink !== null"
+            v-if="entryData.buttonlink !== ''"
             class="main-article__button-container"
           >
             <a
