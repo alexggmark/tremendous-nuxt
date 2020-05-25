@@ -13,6 +13,19 @@
             {{ processDate(entryData._createdAt) }}
           </span>
 
+          <div
+            v-if="entryData.buttonlink !== null"
+            class="main-article__button-container"
+          >
+            <a
+              :href="entryData.buttonlink.split(',')[1]"
+              class="button"
+              target="_blank"
+            >
+              {{ entryData.buttonlink.split(',')[0] }}
+            </a>
+          </div>
+
           <span class="main-article__text-content" v-html="$md.render(entryData.body)" />
         </div>
       </div>
@@ -48,13 +61,34 @@ export default {
   color: $color-black;
   padding-bottom: $spacing-xl;
 
+  &__button-container {
+    margin: 2rem 0;
+  }
+
+  .button {
+    background-color: $color-primary;
+    border-radius: 2px;
+    color: $color-white;
+    font-size: 12px;
+    padding: 0.75rem 2.5rem;
+    text-decoration: none;
+    transition: 0.1s ease;
+
+    &:hover {
+      background-color: $color-grey-light;
+      color: $color-primary;
+      border-radius: 0;
+    }
+  }
+
   img {
     border: 2px solid $color-grey-light;
     width: 100%;
   }
 
   blockquote {
-    // background-color: $color-grey-light;
+    background-color: $color-grey-light;
+    border-radius: 0;
     color: $color-primary;
     font-size: 25px;
     font-weight: 400;
@@ -66,7 +100,7 @@ export default {
       content: '';
       display: block;
       background-color: $color-primary;
-      width: 6px;
+      width: 3px;
       left: 0;
       height: 100%;
       position: absolute;
@@ -74,7 +108,7 @@ export default {
 
     p {
       margin: 0;
-      padding: 0 1rem 0 1.5rem;
+      padding: 1rem 1rem 1rem 1.5rem;
     }
   }
 
@@ -163,13 +197,12 @@ export default {
     }
 
     blockquote {
-      &::before {
-        left: 1rem;
-      }
+      border-radius: 0 5px 5px 0;
+      margin: 0 0 0 1rem;
 
       p {
         margin: 0;
-        padding: 1rem 1rem 1rem 3rem;
+        padding: 1rem 1rem 1rem 2rem;
       }
     }
   }

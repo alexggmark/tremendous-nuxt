@@ -22,6 +22,7 @@ export const actions = {
               }
             }
             title
+            buttonlink
             intro
             body
             image {
