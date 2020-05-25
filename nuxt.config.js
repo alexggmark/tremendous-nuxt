@@ -23,7 +23,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Global CSS

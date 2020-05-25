@@ -50,7 +50,8 @@ export default {
   ** Nuxt.js modules
   */
   modules: [
-    '@nuxtjs/markdownit'
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dotenv'
   ],
   markdownit: {
     injected: true,

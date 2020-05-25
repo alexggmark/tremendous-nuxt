@@ -58,6 +58,10 @@ export default {
     width: 100%;
   }
 
+  &__main {
+    width: 100%;
+  }
+
   &__item {
     margin-bottom: 1rem;
     width: 100%;
@@ -115,7 +119,7 @@ export default {
     overflow: hidden;
 
     &__main {
-      padding-right: 16rem;
+      width: 800px;
     }
 
     &__container {
